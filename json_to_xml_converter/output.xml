@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<object>
+  <string name="name">Ajay</string>
+  <number name="age">22</number>
+  <boolean name="is_student">true</boolean>
+  <array name="skills">
+    <string>python</string>
+    <null/>
+    <number>5</number>
+    </array>
+  </object>
