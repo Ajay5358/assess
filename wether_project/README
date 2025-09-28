@@ -1,0 +1,92 @@
+# Weather API Project
+
+This project provides a REST API to fetch and analyze historical weather data.
+
+## Features
+- Process CSV or Excel files via CLI input
+- Fetch weather data by:
+  - Year
+  - Year/Month
+  - Year/Month/Day
+- Fetch statistics (max, min, median) for:
+  - Temperature
+  - Humidity
+  - Pressure
+  - Heat Index
+- Pagination support for large datasets
+- Validation for month/day input
+- Handles missing or empty database gracefully
+
+## File Structure
+wether_project/
+├── app.py
+├── processing.py
+├── README.md
+├── requirements.txt
+├── weather_data.csv
+└── weather.db
+
+perl
+Copy code
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+Usage
+1️⃣ Process CSV/Excel to Database
+bash
+Copy code
+python processing.py weather_data.csv
+# or
+python processing.py weather_data.xlsx
+2️⃣ Run API
+bash
+Copy code
+python app.py
+3️⃣ API Endpoints
+Fetch weather data:
+
+sql
+Copy code
+GET /weather/<year>
+GET /weather/<year>/<month>
+GET /weather/<year>/<month>/<day>
+Fetch stats:
+
+sql
+Copy code
+GET /weather/stats/<year>/<month>/<day>
+Pagination:
+
+pgsql
+Copy code
+Add ?page=X&limit=Y
+Example:
+
+bash
+Copy code
+/weather/2023/01?page=2&limit=50
+Notes
+Ensure the database weather.db exists before running API
+
+Valid month: 1–12, valid day: 1–31
+
+yaml
+Copy code
+
+---
+
+This setup includes all **recommended improvements**:
+
+- ✅ Validation for month/day  
+- ✅ Pagination  
+- ✅ Extra stats  
+- ✅ Error handling if DB missing or empty  
+- ✅ CLI input for CSV/Excel  
+
+---
+
+If you want, I can also provide a **Postman collection** ready to test all endpoints with pagination and stats.  
+
+Do you want me to create that?
